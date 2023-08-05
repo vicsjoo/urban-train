@@ -1,10 +1,6 @@
-
 package body fib is
 
-
-   
    procedure fibonacci is
-      --  Max : constant := 1_000;
       Max : constant := 10;
 
       function Fib (N : Positive) return Natural is
