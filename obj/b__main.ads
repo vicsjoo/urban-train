@@ -40,7 +40,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#70e1e4cf#;
+   u00001 : constant Version_32 := 16#b1cd4909#;
    pragma Export (C, u00001, "mainB");
    u00002 : constant Version_32 := 16#2e11c0b1#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -354,10 +354,14 @@ package ada_main is
    pragma Export (C, u00156, "system__concat_2B");
    u00157 : constant Version_32 := 16#2d5a86c4#;
    pragma Export (C, u00157, "system__concat_2S");
-   u00158 : constant Version_32 := 16#eca5ecae#;
-   pragma Export (C, u00158, "system__memoryB");
-   u00159 : constant Version_32 := 16#76873720#;
-   pragma Export (C, u00159, "system__memoryS");
+   u00158 : constant Version_32 := 16#2b70b149#;
+   pragma Export (C, u00158, "system__concat_3B");
+   u00159 : constant Version_32 := 16#248a0db1#;
+   pragma Export (C, u00159, "system__concat_3S");
+   u00160 : constant Version_32 := 16#eca5ecae#;
+   pragma Export (C, u00160, "system__memoryB");
+   u00161 : constant Version_32 := 16#76873720#;
+   pragma Export (C, u00161, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -409,6 +413,8 @@ package ada_main is
    --  system.compare_array_unsigned_8%b
    --  system.concat_2%s
    --  system.concat_2%b
+   --  system.concat_3%s
+   --  system.concat_3%b
    --  system.traceback%s
    --  system.traceback%b
    --  ada.characters.handling%s

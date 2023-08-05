@@ -29,6 +29,25 @@ procedure Main is
    --     end loop;
    --  end lFibonacci;
 
+   procedure fun_Fibonacci is
+      --  Max : constant := 1_000;
+      Max : constant := 10;
+
+      function Fib (N : Positive) return Natural is
+      begin
+         if N = 1 or N = 2 then
+            return 1;
+         else
+            return Fib (N - 1) + Fib (N - 2);
+         end if;
+      end Fib;
+
+   begin
+      for I in 1 .. Max loop
+         Put_Line (I'Image & ": \" & Fib (I)'Image);
+      end loop;
+   end fun_Fibonacci;
+
    function fibonacci_digit (n : Integer) return Integer is
    begin
       if n = 0 then
@@ -71,5 +90,5 @@ begin
    tmpVar := Fibonacci (1);
 
    Put_Line (Ada.Strings.Unbounded.To_String (tmpVar));
-
+   fun_Fibonacci;
 end Main;
