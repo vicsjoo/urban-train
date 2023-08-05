@@ -1,5 +1,16 @@
 # Object file
 *.o
 
+# Build File
+*.exe
+
 # Ada Library Information
 *.ali
+
+# Ada Stderr File
+*stderr
+
+# Ada Stdout File
+*.stdout
+
+
