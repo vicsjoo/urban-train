@@ -1,0 +1,1 @@
+main.adb:3:18: warning: "Ada.Numerics.Big_Numbers" is an Ada 2022 unit [-gnatwi]
