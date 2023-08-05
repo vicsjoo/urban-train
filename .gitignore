@@ -13,4 +13,8 @@
 # Ada Stdout File
 *.stdout
 
+# Ada Bexch File
+*.bexch
 
+#GPSAUTO file
+*.cgpr
