@@ -7,9 +7,11 @@ with Ada.Containers; use Ada.Containers;
 --  with Ada.Containers.Ordered_Sets; use Ada.Containers.Ordered_Sets;
 with Ada.Numerics.Float_Random; use Ada.Numerics.Float_Random;
 with Ada.Finalization; use Ada.Finalization;
+with System; use System;
 
 package lotto is
+    procedure Lottery;
     subtype Number_Range is Integer range 1 .. 60;
     type Lottery_Numbers is array (1 .. 60) of Boolean;
-    function Generate_Lottery_Pick return String;
+  
 end lotto;
