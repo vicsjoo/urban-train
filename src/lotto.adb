@@ -8,8 +8,9 @@ package body lotto is
          Lottery_Pick_Array : Lottery_Pick_Array_Type;
          --  Lottery_Pick_Array : Lottery_Pick_Array_Type;
          Random_Number     : Integer := 0;
-         Max_Result_Length : Integer :=(3 * Integer (Pick_Length'Last));
+         Max_Result_Length : Integer :=(3 * Integer (Pick_Length'Last) -1);
          Result : String(1 ..Max_Result_Length);  -- "01-02-03-04-05-06" + null terminator (should be 18)
+         Partial_Result : String (1..2);
          package Rand_Int is new Ada.Numerics.Discrete_Random (Int_Range);
          Rand_Gen : Rand_Int.Generator;
 
@@ -19,15 +20,16 @@ package body lotto is
             -- Generate a random number within the allowed range
             Random_Number              := Integer (Rand_Int.Random (Rand_Gen));
             Lottery_Pick_Array (Index) := Random_Number;
+
             Ada.Text_IO.Put_Line
               (Lottery_Pick_Array (Index)'Image & " hello, index is: " &
-               Index'Image);
+                 Index'Image);
 
          end loop;
 
          -- Construct the Result string
-         --  Result := "01-02-03-04-05-06";
-         Result := "ssssssssssssssssss";
+        Result := "01-02-03-04-05-06";
+         --  Result := "ssssssssssssssssss";
          return Result;
       end Generate_Lottery_Pick;
 

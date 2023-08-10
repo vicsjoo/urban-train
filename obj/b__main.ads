@@ -324,7 +324,7 @@ package ada_main is
    pragma Export (C, u00141, "system__concat_2B");
    u00142 : constant Version_32 := 16#2d5a86c4#;
    pragma Export (C, u00142, "system__concat_2S");
-   u00143 : constant Version_32 := 16#4c78946b#;
+   u00143 : constant Version_32 := 16#66b22782#;
    pragma Export (C, u00143, "lottoB");
    u00144 : constant Version_32 := 16#c1c4bf9b#;
    pragma Export (C, u00144, "lottoS");
