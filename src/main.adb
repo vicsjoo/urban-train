@@ -6,9 +6,9 @@ with lotto;               use lotto;
 procedure Main is
 
 begin
-   Put_Line ("Hello World! ");
+   --  Put_Line ("Hello World! ");
    Lottery;
-   fibonacci;
+   --  fibonacci;
    --  Put_Line(myStr);
 
 end Main;
