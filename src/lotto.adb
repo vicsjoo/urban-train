@@ -27,13 +27,29 @@ package body lotto is
          end loop;
 
          -- Construct the Result string
-         Result := Integer'Image(Lottery_Pick_Array(1));
+         declare
+            Number_String : String(1..2); -- String to hold the formatted number
+         begin
+            Number_String := Integer'Image(Lottery_Pick_Array(1));
+            if Lottery_Pick_Array(1) < 10 then
+               Number_String(1) := '0'; -- Add leading zero
+            end if;
+            Result := Number_String;
+         end;
+
          for Index in 2..Pick_Length'Last loop
-            Result := Result & "-" & Integer'Image(Lottery_Pick_Array(Index));
+            declare
+               Number_String : String(1..2); -- String to hold the formatted number
+            begin
+               Number_String := Integer'Image(Lottery_Pick_Array(Index));
+               if Lottery_Pick_Array(Index) < 10 then
+                  Number_String(1) := '0'; -- Add leading zero
+               end if;
+               Result := Result & "-" & Number_String;
+            end;
          end loop;
 
          return Result;
-        
       end Generate_Lottery_Pick;
      
 

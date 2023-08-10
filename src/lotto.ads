@@ -9,6 +9,7 @@ with Ada.Containers; use Ada.Containers;
 --  with Ada.Numerics; use Ada.Numerics;
 with Ada.Numerics.Discrete_Random;
 with Ada.Finalization; use Ada.Finalization;
+with Ada.Strings.Fixed;
 with System; use System;
 
 package lotto is
