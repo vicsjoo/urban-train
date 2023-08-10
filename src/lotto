@@ -1,0 +1,45 @@
+package body rng is
+
+procedure Lottery_Pick is
+    subtype Number_Range is Integer range 1 .. 60;
+    subtype Lottery_Numbers is Ordered_Sets.Set of Number_Range;
+
+    function Generate_Lottery_Pick return Unbounded_String is
+        Numbers_Set : Lottery_Numbers;
+        Lottery_String : String (1 .. 17);
+    begin
+        -- Initialize random number generator
+        Seed := Clock;
+        Reset_IO;
+
+        -- Generate unique random numbers
+        while Numbers_Set'Length < 6 loop
+            Rand_Num : Integer;
+            Number_Generated : Boolean := False;
+            
+            while not Number_Generated loop
+                Rand_Num := Integer'Value (Random (60) + 1);
+                
+                if not Rand_Num in Numbers_Set then
+                    Numbers_Set.Insert (Rand_Num);
+                    Number_Generated := True;
+                end if;
+            end loop;
+        end loop;
+
+        -- Format the numbers as a sorted string
+        for Index in 1 .. Numbers_Set'Length loop
+            Append (Lottery_String, Numbers_Set (Index)'Image (Just => Right, Width => 2));
+            if Index < Numbers_Set'Length then
+                Append (Lottery_String, "-");
+            end if;
+        end loop;
+
+        return To_Unbounded_String (Lottery_String);
+    end Generate_Lottery_Pick;
+
+    Lottery : Unbounded_String := Generate_Lottery_Pick;
+begin
+    Put_Line ("Lottery Pick: " & To_String (Lottery));
+end Lottery_Pick;
+end rng;
