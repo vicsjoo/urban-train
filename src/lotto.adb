@@ -1,66 +1,53 @@
 package body lotto is
 
-procedure Lottery is
-      function Generate_Lottery_Pick return String is
-         Picks : array (1..6) of Integer;
-         Result : String (1..17);  -- "01-02-03-04-05-06" + null terminator
-
-         Random_Generator : System.Random.Generator;
+   procedure Lottery is
+   function Generate_Lottery_Pick return String is
+         type Int_Range is range 1..60;
+         type Pick_Length is range 1..6;
+         type Lottery_Pick_Array_Type is array (Pick_Length) of Int_Range;
+         Lottery_Pick_Array : Lottery_Pick_Array_Type;
+         Random_Number : Int_Range;
+         Max_Result_Length : Integer := (2 * Integer(Pick_Length'Last)) + (Integer(Pick_Length'Last) - 1);
+         Result : String (1..Max_Result_Length);  -- "01-02-03-04-05-06" + null terminator (should be 17)
          
-         -- Subprogram to swap two elements in an array
-         procedure Swap(Item1, Item2 : in out Integer) is
-            Temp : Integer := Item1;
-         begin
-            Item1 := Item2;
-            Item2 := Temp;
-         end Swap;
+         package Rand_Int is new Ada.Numerics.Discrete_Random(Int_Range);
+         --  use Rand_Int;
+         Rand_Gen : Rand_Int.Generator;
+
+         
+         
          
       begin
-         -- Initialize random number generator
-         System.Random.Reset (Generator => Random_Generator, Seed => Clock);
-         
-         Ada.Text_IO.Put_Line("Generating lottery numbers...");
-         for i in Picks'Range loop
-            for j in 1..i loop
-               loop
-                  Picks(i) := Integer (1 + System.Random (Generator => Random_Generator)) mod 60 + 1;
-                  declare
-                     HasDuplicate : Boolean := False;
-                  begin
-                     for k in 1..i-1 loop
-                        if Picks(i) = Picks(k) then
-                           HasDuplicate := True;
-                           exit;
-                        end if;
-                     end loop;
-                     exit when not HasDuplicate;
-                  end;
-               end loop;
-            end loop;
-         end loop;
-
-         -- Sort the numbers in ascending order
-         for i in Picks'Range loop
-            for j in i + 1 .. Picks'Last loop
-               if Picks(i) > Picks(j) then
-                  Swap(Picks(i), Picks(j));
-               end if;
-            end loop;
-         end loop;
-
-         -- Convert the numbers to a formatted string
-         Result := Picks(1)'Image & "-" & Picks(2)'Image & "-" &
-                   Picks(3)'Image & "-" & Picks(4)'Image & "-" &
-                   Picks(5)'Image & "-" & Picks(6)'Image;
-         
+--   for I in Lottery_Pick_Array'Range loop
+--     loop
+--        Rand_Int.Reset(Rand_Gen);
+--        Random_Number := Rand_Int.Random(Rand_Gen);
+--        exit when Random_Number not in Lottery_Pick_Array;
+--     end loop;
+--  
+--     Lottery_Pick_Array (I) := Random_Number;
+--  end loop;
+            
+      --  -- Sort the numbers in ascending order
+      --  
+      --  -- Convert the numbers to a formatted string
+      --  Result := Picks(1)'Image & "-" & Picks(2)'Image & "-" &
+      --            Picks(3)'Image & "-" & Picks(4)'Image & "-" &
+      --            Picks(5)'Image & "-" & Picks(6)'Image;
+      --  
+      --  return Result;
+         Result := "01-02-03-04-05-06";
+         --  Ada.Text_IO.Put_Line(Integer'Image(Max_Result_Length));
          return Result;
+         
       end Generate_Lottery_Pick;
+     
 
-      package Integer_IO is new Ada.Text_IO.Integer_IO (Integer);
-      use Integer_IO;
+   package Integer_IO is new Ada.Text_IO.Integer_IO (Integer);
+   use Integer_IO;
 
-   begin
+begin
       Ada.Text_IO.Put_Line(Generate_Lottery_Pick);
-   end Lottery;
-
+     
+end Lottery;
 end lotto;

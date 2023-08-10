@@ -5,12 +5,12 @@ with lotto; use lotto;
 
 
 procedure Main is
-
+ tmpStr : String :="";
  myStr :String :="";
 begin
    Put_Line ("Hello World! ");
    fibonacci;
-
+   Lottery;
    Put_Line(myStr);
 
 

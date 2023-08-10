@@ -5,7 +5,9 @@ with Ada.Strings.Fixed; use Ada.Strings.Fixed;
 with Ada.Strings.Unbounded; use Ada.Strings.Unbounded;
 with Ada.Containers; use Ada.Containers;
 --  with Ada.Containers.Ordered_Sets; use Ada.Containers.Ordered_Sets;
-with Ada.Numerics.Float_Random; use Ada.Numerics.Float_Random;
+--  with Ada.Numerics.Float_Random; use Ada.Numerics.Float_Random;
+--  with Ada.Numerics; use Ada.Numerics;
+with Ada.Numerics.Discrete_Random;
 with Ada.Finalization; use Ada.Finalization;
 with System; use System;
 

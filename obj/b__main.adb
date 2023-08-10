@@ -22,6 +22,7 @@ package body ada_main is
    E045 : Short_Integer; pragma Import (Ada, E045, "system__dwarf_lines_E");
    E021 : Short_Integer; pragma Import (Ada, E021, "system__soft_links__initialize_E");
    E037 : Short_Integer; pragma Import (Ada, E037, "system__traceback__symbolic_E");
+   E145 : Short_Integer; pragma Import (Ada, E145, "ada__numerics_E");
    E100 : Short_Integer; pragma Import (Ada, E100, "ada__strings__utf_encoding_E");
    E106 : Short_Integer; pragma Import (Ada, E106, "ada__tags_E");
    E098 : Short_Integer; pragma Import (Ada, E098, "ada__strings__text_buffers_E");
@@ -30,8 +31,12 @@ package body ada_main is
    E121 : Short_Integer; pragma Import (Ada, E121, "system__finalization_root_E");
    E119 : Short_Integer; pragma Import (Ada, E119, "ada__finalization_E");
    E118 : Short_Integer; pragma Import (Ada, E118, "system__file_io_E");
+   E164 : Short_Integer; pragma Import (Ada, E164, "ada__strings__unbounded_E");
+   E151 : Short_Integer; pragma Import (Ada, E151, "ada__calendar_E");
    E094 : Short_Integer; pragma Import (Ada, E094, "ada__text_io_E");
+   E149 : Short_Integer; pragma Import (Ada, E149, "system__random_seed_E");
    E138 : Short_Integer; pragma Import (Ada, E138, "fib_E");
+   E144 : Short_Integer; pragma Import (Ada, E144, "lotto_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
 
@@ -49,12 +54,19 @@ package body ada_main is
       begin
          F1;
       end;
+      E164 := E164 - 1;
       declare
          procedure F2;
-         pragma Import (Ada, F2, "system__file_io__finalize_body");
+         pragma Import (Ada, F2, "ada__strings__unbounded__finalize_spec");
+      begin
+         F2;
+      end;
+      declare
+         procedure F3;
+         pragma Import (Ada, F3, "system__file_io__finalize_body");
       begin
          E118 := E118 - 1;
-         F2;
+         F3;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -187,6 +199,8 @@ package body ada_main is
       System.Traceback.Symbolic'Elab_Body;
       E037 := E037 + 1;
       E008 := E008 + 1;
+      Ada.Numerics'Elab_Spec;
+      E145 := E145 + 1;
       Ada.Strings.Utf_Encoding'Elab_Spec;
       E100 := E100 + 1;
       Ada.Tags'Elab_Spec;
@@ -206,10 +220,19 @@ package body ada_main is
       E119 := E119 + 1;
       System.File_Io'Elab_Body;
       E118 := E118 + 1;
+      Ada.Strings.Unbounded'Elab_Spec;
+      Ada.Strings.Unbounded'Elab_Body;
+      E164 := E164 + 1;
+      Ada.Calendar'Elab_Spec;
+      Ada.Calendar'Elab_Body;
+      E151 := E151 + 1;
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
       E094 := E094 + 1;
+      System.Random_Seed'Elab_Body;
+      E149 := E149 + 1;
       E138 := E138 + 1;
+      E144 := E144 + 1;
    end adainit;
 
    procedure Ada_Main_Program;
@@ -248,6 +271,7 @@ package body ada_main is
 
 --  BEGIN Object file/option list
    --   C:\Users\vicsj\Desktop\ada\obj\fib.o
+   --   C:\Users\vicsj\Desktop\ada\obj\lotto.o
    --   C:\Users\vicsj\Desktop\ada\obj\main.o
    --   -LC:\Users\vicsj\Desktop\ada\obj\
    --   -LC:\Users\vicsj\Desktop\ada\obj\

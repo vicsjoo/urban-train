@@ -40,7 +40,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#fb39b1d1#;
+   u00001 : constant Version_32 := 16#470781d7#;
    pragma Export (C, u00001, "mainB");
    u00002 : constant Version_32 := 16#2e11c0b1#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -324,10 +324,80 @@ package ada_main is
    pragma Export (C, u00141, "system__concat_2B");
    u00142 : constant Version_32 := 16#2d5a86c4#;
    pragma Export (C, u00142, "system__concat_2S");
-   u00143 : constant Version_32 := 16#eca5ecae#;
-   pragma Export (C, u00143, "system__memoryB");
-   u00144 : constant Version_32 := 16#76873720#;
-   pragma Export (C, u00144, "system__memoryS");
+   u00143 : constant Version_32 := 16#39ac88b5#;
+   pragma Export (C, u00143, "lottoB");
+   u00144 : constant Version_32 := 16#1b950b9c#;
+   pragma Export (C, u00144, "lottoS");
+   u00145 : constant Version_32 := 16#f2c63a02#;
+   pragma Export (C, u00145, "ada__numericsS");
+   u00146 : constant Version_32 := 16#0774605b#;
+   pragma Export (C, u00146, "system__random_numbersB");
+   u00147 : constant Version_32 := 16#19a1600c#;
+   pragma Export (C, u00147, "system__random_numbersS");
+   u00148 : constant Version_32 := 16#15692802#;
+   pragma Export (C, u00148, "system__random_seedB");
+   u00149 : constant Version_32 := 16#c3b30278#;
+   pragma Export (C, u00149, "system__random_seedS");
+   u00150 : constant Version_32 := 16#48583e4e#;
+   pragma Export (C, u00150, "ada__calendarB");
+   u00151 : constant Version_32 := 16#31350a81#;
+   pragma Export (C, u00151, "ada__calendarS");
+   u00152 : constant Version_32 := 16#24ec69e6#;
+   pragma Export (C, u00152, "system__os_primitivesB");
+   u00153 : constant Version_32 := 16#280734e2#;
+   pragma Export (C, u00153, "system__os_primitivesS");
+   u00154 : constant Version_32 := 16#2f9cb76c#;
+   pragma Export (C, u00154, "system__arith_64B");
+   u00155 : constant Version_32 := 16#9d9eabfb#;
+   pragma Export (C, u00155, "system__arith_64S");
+   u00156 : constant Version_32 := 16#05c60a38#;
+   pragma Export (C, u00156, "system__task_lockB");
+   u00157 : constant Version_32 := 16#4e70667a#;
+   pragma Export (C, u00157, "system__task_lockS");
+   u00158 : constant Version_32 := 16#b8c476a4#;
+   pragma Export (C, u00158, "system__win32__extS");
+   u00159 : constant Version_32 := 16#0de7ae30#;
+   pragma Export (C, u00159, "ada__strings__fixedB");
+   u00160 : constant Version_32 := 16#64881af1#;
+   pragma Export (C, u00160, "ada__strings__fixedS");
+   u00161 : constant Version_32 := 16#bb264ce2#;
+   pragma Export (C, u00161, "ada__strings__searchB");
+   u00162 : constant Version_32 := 16#73987e07#;
+   pragma Export (C, u00162, "ada__strings__searchS");
+   u00163 : constant Version_32 := 16#42b36dfe#;
+   pragma Export (C, u00163, "ada__strings__unboundedB");
+   u00164 : constant Version_32 := 16#da258d18#;
+   pragma Export (C, u00164, "ada__strings__unboundedS");
+   u00165 : constant Version_32 := 16#a1d6147d#;
+   pragma Export (C, u00165, "system__compare_array_unsigned_8B");
+   u00166 : constant Version_32 := 16#86f92099#;
+   pragma Export (C, u00166, "system__compare_array_unsigned_8S");
+   u00167 : constant Version_32 := 16#a8025f3c#;
+   pragma Export (C, u00167, "system__address_operationsB");
+   u00168 : constant Version_32 := 16#3cf6ef27#;
+   pragma Export (C, u00168, "system__address_operationsS");
+   u00169 : constant Version_32 := 16#020a3f4d#;
+   pragma Export (C, u00169, "system__atomic_countersB");
+   u00170 : constant Version_32 := 16#9ba67c99#;
+   pragma Export (C, u00170, "system__atomic_countersS");
+   u00171 : constant Version_32 := 16#c9a3fcbc#;
+   pragma Export (C, u00171, "system__stream_attributesB");
+   u00172 : constant Version_32 := 16#414158da#;
+   pragma Export (C, u00172, "system__stream_attributesS");
+   u00173 : constant Version_32 := 16#3e25f63c#;
+   pragma Export (C, u00173, "system__stream_attributes__xdrB");
+   u00174 : constant Version_32 := 16#ce9a2a0c#;
+   pragma Export (C, u00174, "system__stream_attributes__xdrS");
+   u00175 : constant Version_32 := 16#ecc88e78#;
+   pragma Export (C, u00175, "system__fat_fltS");
+   u00176 : constant Version_32 := 16#cafa8775#;
+   pragma Export (C, u00176, "system__fat_lfltS");
+   u00177 : constant Version_32 := 16#b02a299f#;
+   pragma Export (C, u00177, "system__fat_llfS");
+   u00178 : constant Version_32 := 16#eca5ecae#;
+   pragma Export (C, u00178, "system__memoryB");
+   u00179 : constant Version_32 := 16#76873720#;
+   pragma Export (C, u00179, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -335,6 +405,10 @@ package ada_main is
    --  ada.characters.latin_1%s
    --  interfaces%s
    --  system%s
+   --  system.address_operations%s
+   --  system.address_operations%b
+   --  system.atomic_counters%s
+   --  system.atomic_counters%b
    --  system.img_int%s
    --  system.img_lli%s
    --  system.img_llli%s
@@ -371,6 +445,8 @@ package ada_main is
    --  system.wch_jis%b
    --  system.wch_cnv%s
    --  system.wch_cnv%b
+   --  system.compare_array_unsigned_8%s
+   --  system.compare_array_unsigned_8%b
    --  system.concat_2%s
    --  system.concat_2%b
    --  system.concat_3%s
@@ -439,6 +515,11 @@ package ada_main is
    --  system.traceback.symbolic%s
    --  system.traceback.symbolic%b
    --  ada.exceptions%b
+   --  ada.numerics%s
+   --  ada.strings.search%s
+   --  ada.strings.search%b
+   --  ada.strings.fixed%s
+   --  ada.strings.fixed%b
    --  ada.strings.utf_encoding%s
    --  ada.strings.utf_encoding%b
    --  ada.strings.utf_encoding.wide_strings%s
@@ -451,6 +532,11 @@ package ada_main is
    --  ada.strings.text_buffers%b
    --  ada.strings.text_buffers.utils%s
    --  ada.strings.text_buffers.utils%b
+   --  system.arith_64%s
+   --  system.arith_64%b
+   --  system.fat_flt%s
+   --  system.fat_lflt%s
+   --  system.fat_llf%s
    --  system.put_images%s
    --  system.put_images%b
    --  ada.streams%s
@@ -461,18 +547,37 @@ package ada_main is
    --  ada.finalization%s
    --  system.file_io%s
    --  system.file_io%b
+   --  system.stream_attributes%s
+   --  system.stream_attributes.xdr%s
+   --  system.stream_attributes.xdr%b
+   --  system.stream_attributes%b
+   --  ada.strings.unbounded%s
+   --  ada.strings.unbounded%b
+   --  system.task_lock%s
+   --  system.task_lock%b
    --  system.val_lllu%s
    --  system.val_llli%s
    --  system.val_uns%s
    --  system.val_int%s
+   --  system.win32.ext%s
+   --  system.os_primitives%s
+   --  system.os_primitives%b
+   --  ada.calendar%s
+   --  ada.calendar%b
    --  ada.text_io%s
    --  ada.text_io%b
    --  ada.text_io.generic_aux%s
    --  ada.text_io.generic_aux%b
    --  ada.integer_text_io%s
    --  ada.integer_text_io%b
+   --  system.random_seed%s
+   --  system.random_seed%b
+   --  system.random_numbers%s
+   --  system.random_numbers%b
    --  fib%s
    --  fib%b
+   --  lotto%s
+   --  lotto%b
    --  main%b
    --  END ELABORATION ORDER
 
