@@ -59,13 +59,13 @@ package body lotto is
             for Index in Lottery_Pick_Array'Range loop
                while Random_Number = Lottery_Pick_Array (Index) loop
                   -- While it is a duplicate, generate another number
-                  Put_Line ("We duplicated it, lol");
+                  --  Put_Line ("We duplicated it, lol");
                   Random_Number := Integer (Rand_Int.Random (Rand_Gen));
                end loop;
             end loop;
             -- Now we add our non-duplicate Random_Number to the array.
             Lottery_Pick_Array (Index) := Random_Number;
-            Put_Line (Integer'Image (Random_Number));
+            --  Put_Line (Integer'Image (Random_Number));
 
          end loop;
 
@@ -95,7 +95,7 @@ package body lotto is
                Result(Integer(i) * 3 - 2) := '0';
                Temp_CharStr := (Integer'Image(Integer(Lottery_Pick_Array(i))));
                Result(Integer(i) * 3 - 1) := Temp_CharStr(2);
-               Put_Line(Result);
+               --  Put_Line(Result);
             else
             --  If it is not less than 10 add it to our Partial_Result
                Partial_Result := Integer'Image(Integer(Lottery_Pick_Array (i)));

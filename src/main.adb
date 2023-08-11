@@ -7,6 +7,9 @@ procedure Main is
 
 begin
    --  Put_Line ("Hello World! ");
+   for index in 1..10 loop
+    Lottery;
+end loop;
    Lottery;
    --  fibonacci;
    --  Put_Line(myStr);
