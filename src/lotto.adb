@@ -39,7 +39,9 @@ package body lotto is
          -- Import and instatiate the random number generator
          package Rand_Int is new Ada.Numerics.Discrete_Random (Int_Range);
 
-         -- Import Sorter
+         -- Declare temporary sorting integer
+
+         Temp_Sort : Integer;
 
          Rand_Gen : Rand_Int.Generator;
 
@@ -62,7 +64,24 @@ package body lotto is
             Put_Line (Integer'Image (Random_Number));
 
          end loop;
-         -- Sort the array
+
+         -- Sort the numbers in ascending order : Reverse Bubble Sort
+         for i in Lottery_Pick_Array'Range loop
+            for j in reverse Lottery_Pick_Array'First .. i - 1 loop
+               if Lottery_Pick_Array (j) > Lottery_Pick_Array (j + 1) then
+                  Temp_Sort                  := Lottery_Pick_Array (j);
+                  Lottery_Pick_Array (j)     := Lottery_Pick_Array (j + 1);
+                  Lottery_Pick_Array (j + 1) := Temp_Sort;
+               end if;
+            end loop;
+         end loop;
+
+         --  Debug the array
+         for i in Lottery_Pick_Array'Range loop
+            Put_Line (Integer'Image (Lottery_Pick_Array (i)));
+         end loop;
+
+
 
          -- Print the generated number
 
@@ -87,3 +106,22 @@ end lotto;
 --  Result := "01-02-03-04-05-06";
 --  Ada.Text_IO.Put_Line(Integer'Image(Max_Result_Length));
 --  return Result;
+
+
+ --  -- Iterates over the array and builds the string
+ --          for i in Lottery_Pick_Array'Range loop
+ --             --  If our number is less than 10 add leading zero
+ --             if Lottery_Pick_Array (i) < 10 then
+ --                Partial_Result := "0" & Integer'Image (Lottery_Pick_Array (i));
+ --                Put_Line(Partial_Result);
+ --             else
+ --             --  If it is not less than 10 add it to our Partial_Result
+ --                Partial_Result := Integer'Image (Lottery_Pick_Array (i));
+ --             end if;
+ --
+ --             -- If we are on a spot that should be a delimiter, we add the delimiter to our string
+ --             if ((i * 3 - 1) mod 3) = 0 and i /= Lottery_Pick_Array'Last then
+ --                Put_Line ("something");
+ --             end if;
+ --
+ --          end loop;
