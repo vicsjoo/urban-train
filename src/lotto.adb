@@ -38,6 +38,9 @@ package body lotto is
 
          -- Import and instatiate the random number generator
          package Rand_Int is new Ada.Numerics.Discrete_Random (Int_Range);
+
+         -- Import Sorter
+
          Rand_Gen : Rand_Int.Generator;
 
       begin
@@ -50,7 +53,7 @@ package body lotto is
             for Index in Lottery_Pick_Array'Range loop
                while Random_Number = Lottery_Pick_Array (Index) loop
                   -- While it is a duplicate, generate another number
-                  Put_Line ("We duplicated it bitch lol");
+                  Put_Line ("We duplicated it, lol");
                   Random_Number := Integer (Rand_Int.Random (Rand_Gen));
                end loop;
             end loop;
@@ -59,6 +62,7 @@ package body lotto is
             Put_Line (Integer'Image (Random_Number));
 
          end loop;
+         -- Sort the array
 
          -- Print the generated number
 
