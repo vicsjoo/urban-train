@@ -31,7 +31,6 @@ package body ada_main is
    E121 : Short_Integer; pragma Import (Ada, E121, "system__finalization_root_E");
    E119 : Short_Integer; pragma Import (Ada, E119, "ada__finalization_E");
    E118 : Short_Integer; pragma Import (Ada, E118, "system__file_io_E");
-   E164 : Short_Integer; pragma Import (Ada, E164, "ada__strings__unbounded_E");
    E151 : Short_Integer; pragma Import (Ada, E151, "ada__calendar_E");
    E094 : Short_Integer; pragma Import (Ada, E094, "ada__text_io_E");
    E149 : Short_Integer; pragma Import (Ada, E149, "system__random_seed_E");
@@ -54,19 +53,12 @@ package body ada_main is
       begin
          F1;
       end;
-      E164 := E164 - 1;
       declare
          procedure F2;
-         pragma Import (Ada, F2, "ada__strings__unbounded__finalize_spec");
-      begin
-         F2;
-      end;
-      declare
-         procedure F3;
-         pragma Import (Ada, F3, "system__file_io__finalize_body");
+         pragma Import (Ada, F2, "system__file_io__finalize_body");
       begin
          E118 := E118 - 1;
-         F3;
+         F2;
       end;
       declare
          procedure Reraise_Library_Exception_If_Any;
@@ -220,9 +212,6 @@ package body ada_main is
       E119 := E119 + 1;
       System.File_Io'Elab_Body;
       E118 := E118 + 1;
-      Ada.Strings.Unbounded'Elab_Spec;
-      Ada.Strings.Unbounded'Elab_Body;
-      E164 := E164 + 1;
       Ada.Calendar'Elab_Spec;
       Ada.Calendar'Elab_Body;
       E151 := E151 + 1;
