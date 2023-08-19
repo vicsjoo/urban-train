@@ -1,6 +1,11 @@
 package body lotto is
    procedure Lottery is
-      function Generate_Lottery_Pick (maxNum : Integer := 60; maxLen : Integer := 6) return String is
+      function Generate_Lottery_Pick
+        (maxNum : Integer := 60; maxLen : Integer := 6) return String
+      is
+
+         -- Since we are looping over an empty initialized, supress the warning
+         pragma Warnings (Off, "may be referenced before it has a value");
 
          --  Declare our interval of allowed numbers from 1 to 60
          subtype Int_Range is Integer range 1 .. maxNum;
@@ -9,7 +14,8 @@ package body lotto is
          subtype Pick_Length is Integer range 1 .. maxLen;
 
          --  Defines a type of array based on the length of our pick
-         type Lottery_Pick_Array_Type is array (1 .. Pick_Length'Last) of Integer;
+         type Lottery_Pick_Array_Type is
+           array (1 .. Pick_Length'Last) of Integer;
 
          --  Create a new array of our custom type
          Lottery_Pick_Array : Lottery_Pick_Array_Type;
@@ -21,7 +27,7 @@ package body lotto is
          Duplicate : Boolean := False;
 
          -- Calculates the maximum size of our string, including the Delimiter and leading zeros based on Pick_Length'Last
-         Max_Result_Length : Integer := (3 * Integer (Pick_Length'Last) - 1);
+         Max_Result_Length : Integer := (3 * (Pick_Length'Last) - 1);
 
          -- Create an empty string with size Max_Result_Length
          Result : String
@@ -48,14 +54,15 @@ package body lotto is
       begin
          Rand_Int.Reset (Rand_Gen);
          for Index in Lottery_Pick_Array'Range loop
+
             -- Generate random numbers until Array'Range
-            Random_Number := Integer (Rand_Int.Random (Rand_Gen));
+            Random_Number := (Rand_Int.Random (Rand_Gen));
 
             -- Iterates over the array to see if the number is duplicate
             for Index in Lottery_Pick_Array'Range loop
                while Random_Number = Lottery_Pick_Array (Index) loop
                   -- While it is a duplicate, generate another number
-                  Random_Number := Integer (Rand_Int.Random (Rand_Gen));
+                  Random_Number := (Rand_Int.Random (Rand_Gen));
                end loop;
             end loop;
             -- Now we add our non-duplicate Random_Number to the array.
@@ -80,26 +87,23 @@ package body lotto is
 
             --  If our number is less than 10 add leading zero
             if Lottery_Pick_Array (i) < 10 then
-               Result (Integer (i) * 3 - 2) := '0';
-               Temp_CharStr                 :=
-                 (Integer'Image (Integer (Lottery_Pick_Array (i))));
-               Result (Integer (i) * 3 - 1) := Temp_CharStr (2);
+               Result ((i) * 3 - 2) := '0';
+               Temp_CharStr := (Integer'Image (Lottery_Pick_Array (i)));
+               Result ((i) * 3 - 1) := Temp_CharStr (2);
                --  Put_Line(Result);
             else
                --  If it is not less than 10 add it to our Partial_Result
-               Partial_Result :=
-                 Integer'Image (Integer (Lottery_Pick_Array (i)));
+               Partial_Result := Integer'Image (Lottery_Pick_Array (i));
          --  Then iterate over the partial result and modify according digits
                for j in Partial_Result'Range loop
-                  Result (Integer (i) * 3 - 2) := Partial_Result (2);
-                  Result (Integer (i) * 3 - 1) := Partial_Result (3);
+                  Result ((i) * 3 - 2) := Partial_Result (2);
+                  Result ((i) * 3 - 1) := Partial_Result (3);
                end loop;
             end if;
 
             -- If we are on a spot that should be a delimiter, we add the delimiter to our string
-            if ((Integer (i) * 3) mod 3) = 0 and i /= Lottery_Pick_Array'Last
-            then
-               Result (Integer (i) * 3) := Delimiter;
+            if (((i) * 3) mod 3) = 0 and i /= Lottery_Pick_Array'Last then
+               Result ((i) * 3) := Delimiter;
             end if;
 
          end loop;
@@ -109,6 +113,6 @@ package body lotto is
    begin
       -- Call the function to generate a random lottery pick
       -- Print the generated number
-      Ada.Text_IO.Put_Line (Generate_Lottery_Pick(25,15));
+      Ada.Text_IO.Put_Line (Generate_Lottery_Pick (25, 15));
    end Lottery;
 end lotto;

@@ -7,11 +7,10 @@ procedure Main is
 
 begin
    --  Put_Line ("Hello World! ");
---     for index in 1..10 loop
---        Lottery;
---  end loop;
-  Lottery;
+   for index in 1 .. 10 loop
+      Lottery;
+   end loop;
    --  fibonacci;
    --  Put_Line(myStr);
-  --  Console_UI;
+   --  Console_UI;
 end Main;

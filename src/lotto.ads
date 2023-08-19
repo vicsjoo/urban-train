@@ -6,7 +6,4 @@ with System;           use System;
 
 package lotto is
    procedure Lottery;
-   subtype Number_Range is Integer range 1 .. 60;
-   type Lottery_Numbers is array (1 .. 60) of Boolean;
-
 end lotto;
