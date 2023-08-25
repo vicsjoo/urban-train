@@ -1,7 +1,8 @@
 package body lotto is
    procedure Lottery is
       function Generate_Lottery_Pick
-        (maxNum : Integer := 60; maxLen : Integer := 6) return String
+        (maxNum      : Integer := 60; maxLen : Integer := 6;
+         isFibonacci : Boolean := False) return String
       is
 
          -- Since we are looping over an empty initialized, supress the warning
@@ -58,12 +59,19 @@ package body lotto is
             -- Generate random numbers until Array'Range
             Random_Number := (Rand_Int.Random (Rand_Gen));
 
+
             -- Iterates over the array to see if the number is duplicate
-            for Index in Lottery_Pick_Array'Range loop
-               while Random_Number = Lottery_Pick_Array (Index) loop
-                  -- While it is a duplicate, generate another number
+            <<Inception>>
+            for Index in 1..(Lottery_Pick_Array'Length -1) loop
+               --If it is a duplicate, generate another number
+               if Random_Number = Lottery_Pick_Array (Index) then
+
                   Random_Number := (Rand_Int.Random (Rand_Gen));
-               end loop;
+                  --  Put_Line("Inception check");
+                  goto Inception;
+                  exit;
+
+               end if;
             end loop;
             -- Now we add our non-duplicate Random_Number to the array.
             Lottery_Pick_Array (Index) := Random_Number;
@@ -80,6 +88,20 @@ package body lotto is
                end if;
             end loop;
          end loop;
+
+         if isFibonacci then
+            declare
+               Fibonacci_Array : Lottery_Pick_Array_Type;
+            begin
+               for i in 2 .. Fibonacci_Array'Length loop
+                  if Fib_Func (i) < Lottery_Pick_Array'Last then
+                     Fibonacci_Array (i) := Fib_Func (i);
+                     Put_Line (Integer'Image (Fibonacci_Array (i)));
+
+                  end if;
+               end loop;
+            end;
+         end if;
 
          -- Iterates over the array and builds the string
 
