@@ -5,5 +5,6 @@ with fib; use fib;
 with System;           use System;
 
 package lotto is
+   type Int_Array is array (Positive range <>) of Integer;
    procedure Lottery;
 end lotto;

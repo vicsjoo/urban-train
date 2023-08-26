@@ -1,5 +1,19 @@
 package body lotto is
    procedure Lottery is
+
+      function Resize_Array (A : Int_Array) return Int_Array is
+         New_A : Int_Array (1 .. A'Length);
+         I     : Natural := 1;
+      begin
+         for J in A'Range loop
+            if A (J) /= 0 then
+               New_A (I) := A (J);
+               I         := I + 1;
+            end if;
+         end loop;
+         return New_A (1 .. I - 1);
+      end Resize_Array;
+
       function Generate_Lottery_Pick
         (maxNum      : Integer := 60; maxLen : Integer := 6;
          isFibonacci : Boolean := False) return String
@@ -7,6 +21,8 @@ package body lotto is
 
          -- Since we are looping over an empty initialized, supress the warning
          pragma Warnings (Off, "may be referenced before it has a value");
+         -- Temporarily supress unreachable code
+         pragma Warnings (Off, "unreachable code");
 
          --  Declare our interval of allowed numbers from 1 to 60
          subtype Int_Range is Integer range 1 .. maxNum;
@@ -59,10 +75,9 @@ package body lotto is
             -- Generate random numbers until Array'Range
             Random_Number := (Rand_Int.Random (Rand_Gen));
 
-
             -- Iterates over the array to see if the number is duplicate
             <<Inception>>
-            for Index in 1..(Lottery_Pick_Array'Length -1) loop
+            for Index in 1 .. (Lottery_Pick_Array'Length - 1) loop
                --If it is a duplicate, generate another number
                if Random_Number = Lottery_Pick_Array (Index) then
 
@@ -89,18 +104,33 @@ package body lotto is
             end loop;
          end loop;
 
+         -- Generate a Fibonacci array and chooses a random amount of fibonacci numbers to fit in the sequence
          if isFibonacci then
             declare
-               Fibonacci_Array : Lottery_Pick_Array_Type;
-            begin
-               for i in 2 .. Fibonacci_Array'Length loop
-                  if Fib_Func (i) < Lottery_Pick_Array'Last then
-                     Fibonacci_Array (i) := Fib_Func (i);
-                     Put_Line (Integer'Image (Fibonacci_Array (i)));
 
+               -- Define temporary Fibonacci_Array
+               Temp_Fibonacci_Array : array (1 .. maxNum) of Integer;
+               Fib_Count            : Integer := 0;
+            begin
+               for i in 1 .. maxNum loop
+                  -- Since our array is already in ascending order at this point we just check if
+                  -- our fibonacci number is less than the last number of the array
+                  if Fib_Func (i + 1) <= maxNum then
+                     Temp_Fibonacci_Array (i) := Fib_Func (i + 1);
+                     Fib_Count                := Fib_Count + 1;
+                     Put_Line(Integer'Image(Temp_Fibonacci_Array(i)));
+                  else
+                     exit;
                   end if;
+
+
+
                end loop;
+
+
             end;
+
+
          end if;
 
          -- Iterates over the array and builds the string
@@ -135,6 +165,6 @@ package body lotto is
    begin
       -- Call the function to generate a random lottery pick
       -- Print the generated number
-      Ada.Text_IO.Put_Line (Generate_Lottery_Pick (25, 15));
+      Ada.Text_IO.Put_Line (Generate_Lottery_Pick (25, 15, True));
    end Lottery;
 end lotto;
