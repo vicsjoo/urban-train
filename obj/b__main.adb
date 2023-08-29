@@ -31,9 +31,9 @@ package body ada_main is
    E121 : Short_Integer; pragma Import (Ada, E121, "system__finalization_root_E");
    E119 : Short_Integer; pragma Import (Ada, E119, "ada__finalization_E");
    E118 : Short_Integer; pragma Import (Ada, E118, "system__file_io_E");
-   E151 : Short_Integer; pragma Import (Ada, E151, "ada__calendar_E");
+   E153 : Short_Integer; pragma Import (Ada, E153, "ada__calendar_E");
    E094 : Short_Integer; pragma Import (Ada, E094, "ada__text_io_E");
-   E149 : Short_Integer; pragma Import (Ada, E149, "system__random_seed_E");
+   E151 : Short_Integer; pragma Import (Ada, E151, "system__random_seed_E");
    E138 : Short_Integer; pragma Import (Ada, E138, "fib_E");
    E144 : Short_Integer; pragma Import (Ada, E144, "lotto_E");
 
@@ -214,12 +214,12 @@ package body ada_main is
       E118 := E118 + 1;
       Ada.Calendar'Elab_Spec;
       Ada.Calendar'Elab_Body;
-      E151 := E151 + 1;
+      E153 := E153 + 1;
       Ada.Text_Io'Elab_Spec;
       Ada.Text_Io'Elab_Body;
       E094 := E094 + 1;
       System.Random_Seed'Elab_Body;
-      E149 := E149 + 1;
+      E151 := E151 + 1;
       E138 := E138 + 1;
       E144 := E144 + 1;
    end adainit;

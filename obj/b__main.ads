@@ -324,42 +324,46 @@ package ada_main is
    pragma Export (C, u00141, "system__concat_2B");
    u00142 : constant Version_32 := 16#2d5a86c4#;
    pragma Export (C, u00142, "system__concat_2S");
-   u00143 : constant Version_32 := 16#707b4a41#;
+   u00143 : constant Version_32 := 16#8cfddcd1#;
    pragma Export (C, u00143, "lottoB");
    u00144 : constant Version_32 := 16#6a1cb537#;
    pragma Export (C, u00144, "lottoS");
    u00145 : constant Version_32 := 16#f2c63a02#;
    pragma Export (C, u00145, "ada__numericsS");
-   u00146 : constant Version_32 := 16#0774605b#;
-   pragma Export (C, u00146, "system__random_numbersB");
-   u00147 : constant Version_32 := 16#19a1600c#;
-   pragma Export (C, u00147, "system__random_numbersS");
-   u00148 : constant Version_32 := 16#15692802#;
-   pragma Export (C, u00148, "system__random_seedB");
-   u00149 : constant Version_32 := 16#c3b30278#;
-   pragma Export (C, u00149, "system__random_seedS");
-   u00150 : constant Version_32 := 16#48583e4e#;
-   pragma Export (C, u00150, "ada__calendarB");
-   u00151 : constant Version_32 := 16#31350a81#;
-   pragma Export (C, u00151, "ada__calendarS");
-   u00152 : constant Version_32 := 16#24ec69e6#;
-   pragma Export (C, u00152, "system__os_primitivesB");
-   u00153 : constant Version_32 := 16#280734e2#;
-   pragma Export (C, u00153, "system__os_primitivesS");
-   u00154 : constant Version_32 := 16#2f9cb76c#;
-   pragma Export (C, u00154, "system__arith_64B");
-   u00155 : constant Version_32 := 16#9d9eabfb#;
-   pragma Export (C, u00155, "system__arith_64S");
-   u00156 : constant Version_32 := 16#05c60a38#;
-   pragma Export (C, u00156, "system__task_lockB");
-   u00157 : constant Version_32 := 16#4e70667a#;
-   pragma Export (C, u00157, "system__task_lockS");
-   u00158 : constant Version_32 := 16#b8c476a4#;
-   pragma Export (C, u00158, "system__win32__extS");
-   u00159 : constant Version_32 := 16#eca5ecae#;
-   pragma Export (C, u00159, "system__memoryB");
-   u00160 : constant Version_32 := 16#76873720#;
-   pragma Export (C, u00160, "system__memoryS");
+   u00146 : constant Version_32 := 16#932a4690#;
+   pragma Export (C, u00146, "system__concat_4B");
+   u00147 : constant Version_32 := 16#519e7a34#;
+   pragma Export (C, u00147, "system__concat_4S");
+   u00148 : constant Version_32 := 16#0774605b#;
+   pragma Export (C, u00148, "system__random_numbersB");
+   u00149 : constant Version_32 := 16#19a1600c#;
+   pragma Export (C, u00149, "system__random_numbersS");
+   u00150 : constant Version_32 := 16#15692802#;
+   pragma Export (C, u00150, "system__random_seedB");
+   u00151 : constant Version_32 := 16#c3b30278#;
+   pragma Export (C, u00151, "system__random_seedS");
+   u00152 : constant Version_32 := 16#48583e4e#;
+   pragma Export (C, u00152, "ada__calendarB");
+   u00153 : constant Version_32 := 16#31350a81#;
+   pragma Export (C, u00153, "ada__calendarS");
+   u00154 : constant Version_32 := 16#24ec69e6#;
+   pragma Export (C, u00154, "system__os_primitivesB");
+   u00155 : constant Version_32 := 16#280734e2#;
+   pragma Export (C, u00155, "system__os_primitivesS");
+   u00156 : constant Version_32 := 16#2f9cb76c#;
+   pragma Export (C, u00156, "system__arith_64B");
+   u00157 : constant Version_32 := 16#9d9eabfb#;
+   pragma Export (C, u00157, "system__arith_64S");
+   u00158 : constant Version_32 := 16#05c60a38#;
+   pragma Export (C, u00158, "system__task_lockB");
+   u00159 : constant Version_32 := 16#4e70667a#;
+   pragma Export (C, u00159, "system__task_lockS");
+   u00160 : constant Version_32 := 16#b8c476a4#;
+   pragma Export (C, u00160, "system__win32__extS");
+   u00161 : constant Version_32 := 16#eca5ecae#;
+   pragma Export (C, u00161, "system__memoryB");
+   u00162 : constant Version_32 := 16#76873720#;
+   pragma Export (C, u00162, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -407,6 +411,8 @@ package ada_main is
    --  system.concat_2%b
    --  system.concat_3%s
    --  system.concat_3%b
+   --  system.concat_4%s
+   --  system.concat_4%b
    --  system.traceback%s
    --  system.traceback%b
    --  ada.characters.handling%s

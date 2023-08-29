@@ -1,4 +1,5 @@
 package body lotto is
+
    procedure Lottery is
 
       function Resize_Array (A : Int_Array) return Int_Array is
@@ -109,28 +110,49 @@ package body lotto is
             declare
 
                -- Define temporary Fibonacci_Array
-               Temp_Fibonacci_Array : array (1 .. maxNum) of Integer;
-               Fib_Count            : Integer := 0;
+               Tmp_Fibonacci_Array : array (1 .. maxNum) of Integer;
+               Fib_Max_Count       : Integer := 0;
             begin
                for i in 1 .. maxNum loop
                   -- Since our array is already in ascending order at this point we just check if
                   -- our fibonacci number is less than the last number of the array
                   if Fib_Func (i + 1) <= maxNum then
-                     Temp_Fibonacci_Array (i) := Fib_Func (i + 1);
-                     Fib_Count                := Fib_Count + 1;
-                     Put_Line(Integer'Image(Temp_Fibonacci_Array(i)));
-                  else
-                     exit;
+                     Tmp_Fibonacci_Array (i) := Fib_Func (i + 1);
+                     Fib_Max_Count           := Fib_Max_Count + 1;
+                     --  Put_Line(Integer'Image(Fibonacci_Array(i)));
                   end if;
-
-
-
                end loop;
+               -- Resize our array
+               declare
+                  Fibonacci_Array : array (1 .. Fib_Max_Count) of Integer;
+                  Fib_Freq : Integer := 0;
+                  Fib_Count : Integer := 0;
+               begin
+                  for i in Fibonacci_Array'Range loop
+                     Fibonacci_Array (i) := Tmp_Fibonacci_Array (i);
+                  end loop;
+
+                   -- Iterates over Lottery_Pick_Array and sets frequency between 1 and Fib_Max_Count, if Fib_Max_Count <= Max_Len,
+               -- If Fib_Max_Count > Max_Len, we need to pick Max_Len in our Fibonacci_Array
+
+
+
+                  if Fib_Max_Count <= maxLen then
+                     for i in Lottery_Pick_Array'Range loop
+                        for j in Fibonacci_Array'Range loop
+                           if Lottery_Pick_Array(i) = Fibonacci_Array(j) then
+                              Fib_Count := Fib_Count +1;
+                              end if;
+                        exit when Lottery_Pick_Array(i) = Fibonacci_Array(j);
+                        end loop;
+                  end loop;
+
+                     end if;
+                  Put_Line("There are " & Integer'Image(Fib_Count) & " fibonacci numbers. Maximum possible = " & Integer'Image(Fib_Max_Count));
+               end;
 
 
             end;
-
-
          end if;
 
          -- Iterates over the array and builds the string
@@ -146,7 +168,8 @@ package body lotto is
             else
                --  If it is not less than 10 add it to our Partial_Result
                Partial_Result := Integer'Image (Lottery_Pick_Array (i));
-         --  Then iterate over the partial result and modify according digits
+               --  Then iterate over the partial result and modify according digits
+               --  Then iterate over the partial result and modify according digits
                for j in Partial_Result'Range loop
                   Result ((i) * 3 - 2) := Partial_Result (2);
                   Result ((i) * 3 - 1) := Partial_Result (3);
