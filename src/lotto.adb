@@ -119,7 +119,8 @@ package body lotto is
                   if Fib_Func (i + 1) <= maxNum then
                      Tmp_Fibonacci_Array (i) := Fib_Func (i + 1);
                      Fib_Max_Count           := Fib_Max_Count + 1;
-                     --  Put_Line(Integer'Image(Fibonacci_Array(i)));
+                     --  Put_Line(Integer'Image(Tmp_Fibonacci_Array(i)));
+                     --  Put_Line(Integer'Image(Fib_Max_Count));
                   end if;
                end loop;
                -- Resize our array
@@ -135,8 +136,6 @@ package body lotto is
                    -- Iterates over Lottery_Pick_Array and sets frequency between 1 and Fib_Max_Count, if Fib_Max_Count <= Max_Len,
                -- If Fib_Max_Count > Max_Len, we need to pick Max_Len in our Fibonacci_Array
 
-
-
                   if Fib_Max_Count <= maxLen then
                      for i in Lottery_Pick_Array'Range loop
                         for j in Fibonacci_Array'Range loop
@@ -148,7 +147,7 @@ package body lotto is
                   end loop;
 
                      end if;
-                  Put_Line("There are " & Integer'Image(Fib_Count) & " fibonacci numbers. Maximum possible = " & Integer'Image(Fib_Max_Count));
+                    Put_Line("There are " & Integer'Image(Fib_Count) & " fibonacci numbers. Maximum possible = " & Integer'Image(Fib_Max_Count));
                end;
 
 
@@ -188,6 +187,6 @@ package body lotto is
    begin
       -- Call the function to generate a random lottery pick
       -- Print the generated number
-      Ada.Text_IO.Put_Line (Generate_Lottery_Pick (25, 15, True));
+      Ada.Text_IO.Put_Line (Generate_Lottery_Pick (60, 6, False));
    end Lottery;
 end lotto;
