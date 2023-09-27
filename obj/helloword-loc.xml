@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project >
+  <Project>
+    <vfs_file>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_file>
     <file_marker column=" 13" line=" 12" >
       <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
       <vfs_file>C:\Users\vicsj\Desktop\ada\src\main.adb</vfs_file>
@@ -9,7 +10,7 @@
       <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
       <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 153" >
+    <file_marker column=" 64" line=" 179" >
       <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
       <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
     </file_marker>
@@ -21,105 +22,9 @@
       <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
       <vfs_file>C:\Users\vicsj\Desktop\ada\src\userinterface.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 11" line=" 2" >
+    <file_marker current="true" column=" 11" line=" 2" >
       <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
       <vfs_file>C:\Users\vicsj\Desktop\ada\src\userinterface.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 19" line=" 130" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 151" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 69" line=" 133" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 122" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 124" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 138" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
-    </file_marker>
-    <file_marker current="true" column=" 15" line=" 151" >
-      <vfs_project>C:\Users\vicsj\Desktop\ada\helloword.gpr</vfs_project>
-      <vfs_file>C:\Users\vicsj\Desktop\ada\src\lotto.adb</vfs_file>
     </file_marker>
   </Project>
 </Locations>
