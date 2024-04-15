@@ -10,7 +10,8 @@ begin
    for index in 1 .. 10 loop
       Lottery;
    end loop;
-   --  fibonacci;
+
+   fibonacci;
    --  Put_Line(myStr);
    --  Console_UI;
 end Main;
